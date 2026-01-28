@@ -92,3 +92,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 window.addEventListener('scroll', fadeInOnScroll);
+function testFirebase() {
+  db.collection("test").add({
+    status: "connected",
+    time: new Date()
+  })
+  .then(() => alert("Firebase connected ✅"))
+  .catch(err => alert(err.message));
+}
+
+
